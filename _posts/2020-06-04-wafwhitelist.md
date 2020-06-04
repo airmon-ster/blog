@@ -13,7 +13,7 @@ For these reasons, I want to sum up the few, easy steps required to whitelist a 
 From the main Azure dashboard search bar, enter WAF and select “Web Application Firewall policies (WAF).” 
 
 {:refdef: style="text-align: center;"}
-![](/assets/images/waf/azurewaf1.jpg)
+![](/assets/images/waf/azurewaf1.jpeg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *WAF policy from dashboard*
@@ -22,7 +22,7 @@ From the main Azure dashboard search bar, enter WAF and select “Web Applicatio
 From there, you will need to either create a new “front door” policy or edit the current policy. In our case, we are creating a new policy for the Application Gateway.
 
 {:refdef: style="text-align: center;"}
-![](/assets/images/waf/azurewaf2.jpg)
+![](/assets/images/waf/azurewaf2.jpeg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Create a new policy*
@@ -31,7 +31,7 @@ From there, you will need to either create a new “front door” policy or edit
 On the first page of “Create a WAF Policy”, select settings that are appropriate for your deployment. As mentioned above, I am going to create a Regional WAF for the Application Gateway. 
 
 {:refdef: style="text-align: center;"}
-![](/assets/images/waf/azurewaf3.jpg)
+![](/assets/images/waf/azurewaf3.jpeg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Edit a policy*
@@ -41,7 +41,7 @@ Following that, move on to the “Policy settings” and, once again, select any
 It should be noted that if you do not already have WAF rules set up, you may have to tune accordingly to ensure that you do not block all traffic.
 
 {:refdef: style="text-align: center;"}
-![](/assets/images/waf/azurewaf4.jpg)
+![](/assets/images/waf/azurewaf4.jpeg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Policy configuration*
@@ -50,7 +50,7 @@ It should be noted that if you do not already have WAF rules set up, you may hav
 The next screen shows the “Managed rules” which, by default, are the OWASP 3.0 rules. For more information on how the OWASP rule set reacts in a WAF, you can view a white paper that I co-authored during my graduate studies [here](/assets/files/ModSecurity_and_the_OWASP_Ruleset.pdf).
 
 {:refdef: style="text-align: center;"}
-![](/assets/images/waf/azurewaf5.jpg)
+![](/assets/images/waf/azurewaf5.jpeg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *OWASP default rule set*
@@ -59,7 +59,7 @@ The next screen shows the “Managed rules” which, by default, are the OWASP 3
 This next screen, “Custom rules” is where the whitelist actually happens. Essentially, we want to say, “Hey, make a new rule, set its priority to 1 so that it precedes the OWASP rules, match on our IP address, and only Log (or Allow) our traffic.” Utilizing this strategy, we are allowing the tester to perform all actions without the OWASP rules getting in the way. The OWASP rules will still apply to any other traffic that does not originate from our IP address.
 
 {:refdef: style="text-align: center;"}
-![](/assets/images/waf/azurewaf6.jpg)
+![](/assets/images/waf/azurewaf6.jpeg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *Custom rule*
@@ -72,7 +72,7 @@ To whitelist a given IP in AWS, the process is not too different.
 Start by searching for “WAF” on the main dashboard search bar and select “WAF & Shield.”
 
 {:refdef: style="text-align: center;"}
-![](/assets/images/waf/awswafsearch.jpg)
+![](/assets/images/waf/awswafsearch.jpeg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *WAF search bar*
@@ -81,7 +81,7 @@ Start by searching for “WAF” on the main dashboard search bar and select “
 Next, the top right corner should have a button for “Create web ACL” if you have not set one up before, go ahead and click on that. This should bring you to a screen where you define the ACL details. Enter in the information specific to your deployment and click next.
 
 {:refdef: style="text-align: center;"}
-![](/assets/images/waf/awswaf2.jpg)
+![](/assets/images/waf/awswaf2.jpeg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *WAF ACL details*
@@ -92,7 +92,7 @@ Select “IP sets” on the left most menu and create a new one using the button
 Give it a name, region, and then add a CIDR address before clicking “Create IP set.”
 
 {:refdef: style="text-align: center;"}
-![](/assets/images/waf/awsIPset.jpg)
+![](/assets/images/waf/awsIPset.jpeg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *WAF IP set*
@@ -102,7 +102,7 @@ Give it a name, region, and then add a CIDR address before clicking “Create IP
 Return to the main WAF dashboard, select your ACL, and then in the top right corner create a new rule from the Rules tab to “Add [your] own rules and rule groups.”
 
 {:refdef: style="text-align: center;"}
-![](/assets/images/waf/awsAddRule.jpg)
+![](/assets/images/waf/awsAddRule.jpeg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *WAF add rule*
@@ -112,7 +112,7 @@ It should be noted that if you do not already have WAF rules set up, you may hav
 Having said that, select “IP set” as the rule type and give it a name, select your created IP set from the drop-down menu, and allow the traffic before clicking “Add rule.”
 
 {:refdef: style="text-align: center;"}
-![](/assets/images/waf/awsWhitelist.jpg)
+![](/assets/images/waf/awsWhitelist.jpeg)
 {: refdef}
 {:refdef: style="text-align: center;"}
 *WAF ACL details*
