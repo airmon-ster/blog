@@ -33,6 +33,9 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/stewart-summers-29119162/"
+    - label: "Github"
+      icon: "fab fa-fw fa-github-square"
+      url: "https://github.com/airmon-ster"
 
 
 footer:
@@ -43,6 +46,9 @@ footer:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/stewart-summers-29119162/"
+    - label: "Github"
+      icon: "fab fa-fw fa-github-square"
+      url: "https://github.com/airmon-ster"
 
 
 defaults:
