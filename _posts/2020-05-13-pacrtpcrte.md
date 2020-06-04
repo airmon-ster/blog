@@ -1,7 +1,7 @@
 ---
 layout: single
 classes: wide
-title:  "Pentester Academy's Attacking and Defending Active Directory and Red Team Labs (CRTP/CRTE)"
+title:  "Red-Teaming: Pentester Academy's Attacking and Defending Active Directory and Red Team Labs (CRTP/CRTE)"
 ---
 
 First Post!
